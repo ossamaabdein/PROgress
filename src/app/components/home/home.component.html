@@ -1,1 +1,38 @@
-<p>home works!</p>
+<div class="home py-5">
+    <div class="container mt-4">
+        <div class="heading d-flex justify-content-between align-items-center mb-3 text-white">
+            <h2>PROGRESS</h2>
+            <!-- <i class="fas fa-moon fs-2 fw-normal"></i> -->
+        </div>
+        <div class="inputSection input-group mb-2">
+            <input #userInput type="text" class="form-control" placeholder="Add a new Task and Press [Enter]" (keydown.Enter)="addTask(userInput)">
+            <button class="btn btn-secondary text-white" type="button" (click)="addTask(userInput)">Add</button>
+        </div>
+        <div class="taskList my-4">
+            <ul class="list-group">
+                <li class="task list-group-item d-flex justify-content-between py-3" *ngFor="let task of tasksList, let i=index">
+                    <div class="taskInfo">
+                        <input (click)="decorate(i)" (keyup.Enter)="decorate(i)" id="test" class="checkbox form-check-input me-2" type="checkbox">
+                        <span class="taskTitle">{{task}}</span>
+                    </div>
+                    <div class="delBtn">
+                        <i class="fas fa-times cursor-pointer" (click)="deleteTask(i)"></i>
+                    </div>
+                </li>
+                <!-- <li class="list-group-item" *ngIf="completedTasks.length == 0">
+                    No Completed Tasks. Keep working...
+                </li> -->
+                <!-- <li class="listSummary list-group-item d-flex justify-content-between">
+                    <span>{{activeTasks.length}} items left</span>
+                    <ul class="listToggler d-flex">
+                        <li (click)="displayAll()"><a class="active">All</a></li>
+                        <li (click)="displayActive()"><a>Active</a></li>
+                        <li (click)="displayCompleted()"><a>Completed</a></li>
+                    </ul>
+                    <a class="clearCompleted" (click)="clearCompleted()">Clear Completed</a>
+                </li> -->
+            </ul>
+        </div>
+        
+    </div>
+</div>

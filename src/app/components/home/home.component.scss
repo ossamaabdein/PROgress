@@ -1,0 +1,92 @@
+.home {
+    background-image: url('../../../assets/images/bg-desktop-light.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: hsl(0, 0%, 98%);
+    min-height: 100vh;
+    .container {
+        width: 40%;
+        .heading {
+            h2 {
+                letter-spacing: 10px;
+            }
+        }
+        .taskList {
+            .list-group {    
+                .task {
+                    cursor: pointer;
+                    .checkbox {
+                        cursor: pointer;
+                    }
+                    .checked {
+                        text-decoration: line-through;
+                    }
+                    .delBtn {
+                        display: none;
+                    }
+                    &:hover {
+                        background-color: hsl(0, 0%, 98%);
+                    }
+                    &:hover .delBtn {
+                        display: block;
+                    }
+                }
+                
+                .listSummary {
+                    font-size: 14px;
+                    .active {
+                        color: hsl(220, 98%, 61%) !important;
+                    }
+                    .listToggler {
+                        list-style: none;
+                        a {
+                            font-size: 14px;
+                            color: unset;
+                            text-decoration: none;
+                            margin-right: 15px;
+                        }
+                    }
+                    .clearCompleted {
+                        text-decoration: none;
+                        color: hsl(234, 11%, 52%);
+                        &:hover {
+                            color: black;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+     .home {
+         .container {
+            width: 60%;
+         }
+     }
+}
+
+@media screen and (max-width: 768px) {
+    .home {
+        background-image: url('../../../assets/images/bg-mobile-light.jpg');
+
+        .container {
+           width: 75%;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .home {
+        padding-top: 25px !important;
+        .container {
+           width: 95%;
+        }
+    }
+}
